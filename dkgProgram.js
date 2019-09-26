@@ -41,13 +41,13 @@ $(document).ready( function () {
             }
           },
           { "data": "titel" },
-          { "data" : "FS-Titel"},
-          { "data" : "abstract"},
           { "data" : "affiliation"},
+          { "data" : "FS-Titel"},
           { "data" : "datum"},
           { "data" : "uhrzeit"},
           { "data" : "raumkuerzel"},
           { "data" : "Leitthema"},
+          { "data" : "abstract"},
         ],
        initComplete: function () {
            $("#program_length").text("");
