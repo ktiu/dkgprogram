@@ -2,21 +2,26 @@
 $(document).ready( function () {
   $.getJSON("https://infodocks.de/api/dkg2019/beitraege", data => {
      var showData = data.map( item => {
-       item.speakers = item.Moderator1;
-       item.speakers = item.Moderator2 ? item.speakers + "<br>" + item.Moderator2 : item.speakers
+       item.speakers = item.Moderator1 + " ("+item.Moderator1_Inst+")";
+       item.speakers = item.Moderator2 ? item.speakers + ", " + item.Moderator2+ " ("+item.Moderator1_Inst+")" : item.speakers
        return(item)
      });
      var table = $('#program').DataTable({
-        "data" : showData,
-        "columns" : [
-          { "data": "speakers" },
-          {
-            "className":      'details-control',
-            "orderable":      false,
-            "data":           null,
-            "defaultContent": '<i class="fas fa-plus-circle text-success">'
+         "process" : true,
+         "data" : showData,
+         "language" : {
+           "url" : "//cdn.datatables.net/plug-ins/1.10.19/i18n/German.json"
+         },
+         "responsive" : true,
+         "order" : [1, "asc"],
+          "columns" : [
+          {   // Responsive control column
+            data: null,
+            defaultContent: '',
+            className: 'control',
+            orderable: false
           },
-          { "data": "titel" },
+          { "data": "speakers" },
           {
             "className":  'fav',
             "orderable":  false,
@@ -27,8 +32,35 @@ $(document).ready( function () {
               var favedClass = faved.includes(data) ? "fas" : "far"; 
               return '<i prog_id='+data+' class="fa-star text-warning '+favedClass+'">';
             }
-          }
-       ],
+          },
+          { "data": "titel" },
+          { "data" : "FS-Titel"},
+          { "data" : "Leitthema"},
+          { "data" : "abstract"},
+          { "data" : "datum"},
+          { "data" : "uhrzeit"},
+          { "data" : "raumkuerzel"},
+        ],
+       initComplete: function () {
+           $("#program_length").text("");
+         this.api().columns().every(function () {
+           var column = this;
+           if ([7, 8].includes(column.index())) {
+             var select = $('<select class="mr-2 custom-select custom-select-sm form-control form-control-sm"><option value="">'+["Tag", "Uhrzeit"][column.index()-7]+' auswählen:</option></select>')
+                .appendTo($("#program_length"))
+                .on('change', function () {
+                  var val = $.fn.dataTable.util.escapeRegex(
+                    $(this).val());
+                    column.search(val ? '^' + val + '$' : '', true, false)
+                      .draw();
+                });
+             column.data().unique().sort().each(function (d, j) {
+             select.append('<option value="' + d + '">' + d + '</option>')
+            });
+          } else return;
+        });
+       }
+
      });
      $('#program tbody').on('click', 'td.fav', function() {
        var tr = $(this).closest('tr');
@@ -37,7 +69,7 @@ $(document).ready( function () {
         if ( saved.faved && saved.faved.includes(row.data().id)) {
           $(this).children("i").removeClass('fas');
           $(this).children("i").addClass('far');
-          Cookies.set('faved', saved.faved.filter( i => i != row.data().id ));
+          Cookies.set('faved', saved.faved.filter( i => i != row.data().id ), { expires: 365 });
         } else {
           var faved;
           if (saved.faved) {
@@ -80,22 +112,21 @@ function updateSchedule(data) {
   var days = Array.from(new Set(data.map(i => i.datum)));
   days = [3,0,2,1].map(i => days[i]);
   days.forEach( d => {
-    $("#schedule").append("<h3 class='mt-3 mb-3'>"+d+"<h3>");
+    $("#schedule").append("<h3 class='mt-4 mb-3'>"+d+"<h3>");
     if(Cookies.getJSON().faved){
       var sessions = data.filter( s => s.datum === d && Cookies.getJSON().faved.includes(s.id)).sort( (a,b) => (a.uhrzeit > b.uhrzeit) ? 1 : ((b.uhrzeit > a.uhrzeit) ? -1 : 0));
       sessions.forEach( s => {
         $("#schedule").append("<div class='card mb-3'>"+
-                              "<div class='card-header'>"+s.uhrzeit+ " | " +s.raumkuerzel+" <span class='float-right'><i sid='"+s.id+"' class='remove-fav fas fa-star fav text-warning'></i></span></div>"+
+                              "<div class='card-header'>"+s.uhrzeit+ " | <b>" +s.raumkuerzel+"</b> <span class='float-right'><i sid='"+s.id+"' class='remove-fav fas fa-star fav text-warning'></i></span></div>"+
                               "<div class='card-body'>"+
                               "<div><i>"+s.speakers+"</i></div>"+
-                              "<div class='mt-2'>"+s.titel+"</div>"+
+                              "<div class='mt-2'><b>"+s.titel+"</b></div>"+
+                              "<div class='mt-2'>"+s["FS-Titel"]+"</div>"+
                               "</div></div>");
       });
     }
   });
   $('#schedule i.remove-fav').on('click', function () {
-      console.log("triggered");
-      console.log($(this).attr("sid"));
       Cookies.set('faved', Cookies.getJSON().faved.filter( i => i != $(this).attr("sid")));
       updateSchedule(data);
       $("[prog_id='"+$(this).attr("sid")+"']").removeClass("fas").addClass("far");

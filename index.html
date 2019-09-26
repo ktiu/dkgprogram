@@ -5,41 +5,58 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="vendor/fontawesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/w/bs4/dt-1.10.18/r-2.2.2/rg-1.1.0/datatables.min.css"/>
+
     <title>DKG Program</title>
     <style>
-      @media (min-width: 768px) { .container{ max-width: 768px }}
-      td.fav, td.details-control {
+      td.fav, .remove-fav {
         cursor: pointer;
+        font-size: 1.5em;
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <div class="card mb-5 mt-5">
+      <div class="small alert alert-warning" role="alert">
+        <i class="fas fa-info-circle mr-2"></i> Dieses inoffizelle Tool enthält nur Beiträge zu den Fachsitzungen. Die Favoritenfunktion setzt einen lokalen Cookie.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      </p>
+      <div class="card">
         <div class="card-header">
-          <ul class="nav card-header-tabs nav-tabs mt-2" id="tablist">
+          <ul class="nav card-header-tabs nav-tabs " id="tablist">
             <li class="nav-item">
-              <a class="nav-link active" href="#overview" role="tab">Program</a>
+              <a class="nav-link active" href="#overview" role="tab">Programmübersicht</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#schedule" role="tab">My schedule</a>
+              <a class="nav-link" href="#schedule" role="tab">Mein Zeitplan</a>
             </li>
           </ul>
         </div>
         <div class="card-body">
           <div class="tab-content mt-3">
             <div class="tab-pane active" id="overview" role="tabpanel">
-              <table id="program" class="table" style="width:100%">
+              <table id="program" class="table table-striped" style="width:100%">
                 <thead>
                   <tr>
-                    <th>Presenters</th>
                     <th></th>
-                    <th>Title</th>
+                    <th>Vortragende</th>
                     <th></th>
+                    <th>Titel</th>
+                    <th>Sitzung</th>
+                    <th>Leitthema</th>
+                    <th>Abstract</th>
+                    <th>Tag</th>
+                    <th>Uhrzeit</th>
+                    <th>Raum</th>
                   </tr>
                 </thead>
+                <tr id="loading">
+                  <td colspan=9 class="text-info"><i class="fas fa-hourglass-half mr-4"></i>RUFE DATEN AB. DAS KANN EINEN MOMENT DAUERN...</td>
+                </tr>
               </table>
             </div>
             <div class="tab-pane" id="schedule" role="tabpanel">
@@ -53,8 +70,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/w/bs4/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
     <script type="text/javascript" charset="utf8" src="dkgProgram.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
   </body>
