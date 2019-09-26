@@ -2,8 +2,10 @@
 $(document).ready( function () {
   $.getJSON("https://infodocks.de/api/dkg2019/beitraege", data => {
      var showData = data.map( item => {
-       item.speakers = item.Moderator1 + " ("+item.Moderator1_Inst+")";
-       item.speakers = item.Moderator2 ? item.speakers + ", " + item.Moderator2+ " ("+item.Moderator1_Inst+")" : item.speakers
+       item.speakers = item.Moderator1;
+       item.speakers = item.Moderator2 ? item.speakers + ", " + item.Moderator2 : item.speakers
+       item.affiliation = item.Moderator1_Inst;
+       item.affiliation = item.Moderator2 ? item.affiliation + " / " + item.Moderator2_Inst : item.affiliation;
        return(item)
      });
      var table = $('#program').DataTable({
@@ -35,11 +37,12 @@ $(document).ready( function () {
           },
           { "data": "titel" },
           { "data" : "FS-Titel"},
-          { "data" : "Leitthema"},
           { "data" : "abstract"},
+          { "data" : "affiliation"},
           { "data" : "datum"},
           { "data" : "uhrzeit"},
           { "data" : "raumkuerzel"},
+          { "data" : "Leitthema"},
         ],
        initComplete: function () {
            $("#program_length").text("");
