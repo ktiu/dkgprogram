@@ -118,7 +118,6 @@ $(document).ready( function () {
 function updateSchedule(data) {
   $("#schedule").text("");
   var days = Array.from(new Set(data.map(i => i.datum)));
-  days = [3,0,2,1].map(i => days[i]);
   days.forEach( d => {
     $("#schedule").append("<h3 class='mt-4 mb-3'>"+d+"<h3>");
     if(Cookies.getJSON().faved){
