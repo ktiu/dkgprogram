@@ -1,7 +1,7 @@
 [{
 	"id": "SV-FS-10",
 	"datum": "Donnerstag, 26.9.2019 ",
-	"uhrzeit": "10:30 – 12:00 Uhr",
+	"uhrzeit": "10:30 - 12:00 Uhr",
 	"raumkuerzel": "OS40 – HS-HB",
   "FS-Titel":"(Sonderveranstaltung)",
   "Leitthema":"(Sonderveranstaltung)",
@@ -11,7 +11,7 @@
 }, {
 	"id": "SV-FS-17 (L2-FS-053.2)",
 	"datum": "Donnerstag, 26.9.2019 ",
-	"uhrzeit": "10:30 – 12:00 Uhr",
+	"uhrzeit": "10:30 - 12:00 Uhr",
 	"raumkuerzel": "JMS2 – HS-K",
   "FS-Titel":"(Sonderveranstaltung)",
   "Leitthema":"(Sonderveranstaltung)",
@@ -21,7 +21,7 @@
 }, {
 	"id": "SV-FS-07",
 	"datum": "Donnerstag, 26.9.2019 ",
-	"uhrzeit": "14:15 – 15:45 Uhr",
+	"uhrzeit": "14:15 - 15:45 Uhr",
 	"raumkuerzel": "JMS2 – HS-K",
   "FS-Titel":"(Sonderveranstaltung)",
   "Leitthema":"(Sonderveranstaltung)",
@@ -31,7 +31,7 @@
 }, {
 	"id": "SV-FS-14",
 	"datum": "Donnerstag, 26.9.2019 ",
-	"uhrzeit": "14:15 – 15:45 Uhr",
+	"uhrzeit": "14:15 - 15:45 Uhr",
 	"raumkuerzel": "WR400 – R-03.70",
   "FS-Titel":"(Sonderveranstaltung)",
   "Leitthema":"(Sonderveranstaltung)",
@@ -41,7 +41,7 @@
 }, {
 	"id": "SV-FS-16",
 	"datum": "Donnerstag, 26.9.2019 ",
-	"uhrzeit": "14:15 – 15:45 Uhr",
+	"uhrzeit": "14:15 - 15:45 Uhr",
 	"raumkuerzel": "OS40 – HS-HB",
   "FS-Titel":"(Sonderveranstaltung)",
   "Leitthema":"(Sonderveranstaltung)",
@@ -51,7 +51,7 @@
 }, {
 	"id": "SV-FS-03",
 	"datum": "Donnerstag, 26.9.2019 ",
-	"uhrzeit": "16:15 – 17:45 Uhr",
+	"uhrzeit": "16:15 - 17:45 Uhr",
 	"raumkuerzel": "OS40 – HS-NG",
   "FS-Titel":"(Sonderveranstaltung)",
   "Leitthema":"(Sonderveranstaltung)",
@@ -61,7 +61,7 @@
 }, {
 	"id": "SV-FS-09",
 	"datum": "Freitag, 27.9.2019 ",
-	"uhrzeit": "8:30 – 12:00 Uhr (mit 30 min. Pause)",
+	"uhrzeit": "8:30 - 12:00 Uhr (mit 30 min. Pause)",
 	"raumkuerzel": "OS40 – HS-HB",
   "FS-Titel":"(Sonderveranstaltung)",
   "Leitthema":"(Sonderveranstaltung)",
@@ -71,7 +71,7 @@
 }, {
 	"id": "SV-FS-11",
 	"datum": "Freitag, 27.9.2019 ",
-	"uhrzeit": "8:30 – 10:00 Uhr",
+	"uhrzeit": "8:30 - 10:00 Uhr",
 	"raumkuerzel": "JMS2 – HS-K",
   "FS-Titel":"(Sonderveranstaltung)",
   "Leitthema":"(Sonderveranstaltung)",
@@ -81,7 +81,7 @@
 }, {
 	"id": "SV-FS-18",
 	"datum": "Freitag, 27.9.2019 ",
-	"uhrzeit": "8:30 – 10:00 Uhr",
+	"uhrzeit": "8:30 - 10:00 Uhr",
 	"raumkuerzel": "OS40 – HS-NG",
   "FS-Titel":"(Sonderveranstaltung)",
   "Leitthema":"(Sonderveranstaltung)",
@@ -91,7 +91,7 @@
 }, {
 	"id": "SV-FS-01",
 	"datum": "Freitag, 27.9.2019 ",
-	"uhrzeit": "10:30 – 12:00 Uhr",
+	"uhrzeit": "10:30 - 12:00 Uhr",
 	"raumkuerzel": "OS40 – HS-NG",
   "FS-Titel":"(Sonderveranstaltung)",
   "Leitthema":"(Sonderveranstaltung)",
@@ -101,7 +101,7 @@
 }, {
 	"id": "SV-FS-08",
 	"datum": "Freitag, 27.9.2019 ",
-	"uhrzeit": "14:15 – 15:45 Uhr",
+	"uhrzeit": "14:15 - 15:45 Uhr",
 	"raumkuerzel": "OS40 – HS-HB",
   "FS-Titel":"(Sonderveranstaltung)",
   "Leitthema":"(Sonderveranstaltung)",
@@ -111,7 +111,7 @@
 }, {
 	"id": "SV-FS-02",
 	"datum": "Freitag, 27.9.2019 ",
-	"uhrzeit": "16:15 – 17:45 Uhr",
+	"uhrzeit": "16:15 - 17:45 Uhr",
 	"raumkuerzel": "OS40 – HS-NG",
   "FS-Titel":"(Sonderveranstaltung)",
   "Leitthema":"(Sonderveranstaltung)",
@@ -122,7 +122,7 @@
 }, {
 	"id": "SV-FS-13",
 	"datum": "Freitag, 27.9.2019 ",
-	"uhrzeit": "16:15 – 17:45 Uhr",
+	"uhrzeit": "16:15 - 17:45 Uhr",
 	"raumkuerzel": "OS40 – HS-HB",
   "FS-Titel":"(Sonderveranstaltung)",
   "Leitthema":"(Sonderveranstaltung)",
@@ -132,7 +132,7 @@
 }, {
 	"id": "SV-FS-06",
 	"datum": "Samstag, 28.9.2019 ",
-	"uhrzeit": "10:30 – 12:00 Uhr",
+	"uhrzeit": "10:30 - 12:00 Uhr",
 	"raumkuerzel": "OS40 – HS-HB",
   "FS-Titel":"(Sonderveranstaltung)",
   "Leitthema":"(Sonderveranstaltung)",
@@ -143,7 +143,7 @@
 }, {
 	"id": "SV-FS-19",
 	"datum": "Samstag, 28.9.2019 ",
-	"uhrzeit": "14:15 – 15:45 Uhr",
+	"uhrzeit": "14:15 - 15:45 Uhr",
 	"raumkuerzel": "OS40 – HS-NG",
   "FS-Titel":"(Sonderveranstaltung)",
   "Leitthema":"(Sonderveranstaltung)",
@@ -153,7 +153,7 @@
 }, {
 	"id": "SV-FS-04",
 	"datum": "Sonntag, 29.9.2019 ",
-	"uhrzeit": "14:15 – 15:45 Uhr",
+	"uhrzeit": "14:15 - 15:45 Uhr",
 	"raumkuerzel": "OS40 – HS-HB",
   "FS-Titel":"(Sonderveranstaltung)",
   "Leitthema":"(Sonderveranstaltung)",
@@ -163,7 +163,7 @@
 }, {
 	"id": "SV-FS-05",
 	"datum": "Sonntag, 29.9.2019 ",
-	"uhrzeit": "14:15 – 15:45 Uhr",
+	"uhrzeit": "14:15 - 15:45 Uhr",
 	"raumkuerzel": "JMS2 – HS-K",
   "FS-Titel":"(Sonderveranstaltung)",
   "Leitthema":"(Sonderveranstaltung)",
@@ -173,7 +173,7 @@
 }, {
 	"id": "SV-FS-12",
 	"datum": "Sonntag, 29.9.2019 ",
-	"uhrzeit": "14:15 – 15:45 Uhr",
+	"uhrzeit": "14:15 - 15:45 Uhr",
 	"raumkuerzel": "OS40 – HS-NG",
   "FS-Titel":"(Sonderveranstaltung)",
   "Leitthema":"(Sonderveranstaltung)",
@@ -183,7 +183,7 @@
 }, {
 	"id": "SV-FS-15",
 	"datum": "Sonntag, 29.9.2019 ",
-	"uhrzeit": "14:15 – 15:45 Uhr",
+	"uhrzeit": "14:15 - 15:45 Uhr",
 	"raumkuerzel": "HRS7 – HS-3",
   "FS-Titel":"(Sonderveranstaltung)",
   "Leitthema":"(Sonderveranstaltung)",
