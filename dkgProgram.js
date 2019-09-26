@@ -30,7 +30,7 @@ $(document).ready( function () {
               var saved = Cookies.getJSON();
               var faved = saved.faved ? saved.faved : new Array;
               var favedClass = faved.includes(data) ? "fas" : "far"; 
-              return '<i prog_id='+data+' class="fa-star text-warning '+favedClass+'">';
+              return '<i prog_id='+data+' class="fa-star text-warning '+favedClass+'"></i>';
             }
           },
           { "data": "titel" },
