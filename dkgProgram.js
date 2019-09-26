@@ -1,19 +1,24 @@
 
 $(document).ready( function () {
-  $.getJSON("https://infodocks.de/api/dkg2019/beitraege", data => {
+  $.getJSON("combined.json", data => {
      var showData = data.map( item => {
-       item.speakers = item.Moderator1;
-       item.speakers = item.Moderator2 ? item.speakers + ", " + item.Moderator2 : item.speakers
-       item.affiliation = item.Moderator1_Inst;
-       item.affiliation = item.Moderator2 ? item.affiliation + " / " + item.Moderator2_Inst : item.affiliation;
-       return(item)
+       if (item.speakers) {
+         item.affiliation = "";
+         return item;
+       } else {
+         item.speakers = item.Moderator1;
+         item.speakers = item.Moderator2 ? item.speakers + ", " + item.Moderator2 : item.speakers
+         item.affiliation = item.Moderator1_Inst;
+         item.affiliation = item.Moderator2 ? item.affiliation + " / " + item.Moderator2_Inst : item.affiliation;
+         return(item);
+       }
      });
      var table = $('#program').DataTable({
          "process" : true,
          "data" : showData,
          "language" : {
            "url" : "//cdn.datatables.net/plug-ins/1.10.19/i18n/German.json"
-         },
+        },
          "responsive" : true,
          "order" : [1, "asc"],
           "columns" : [
@@ -31,7 +36,7 @@ $(document).ready( function () {
             "render": function(data, type, row){
               var saved = Cookies.getJSON();
               var faved = saved.faved ? saved.faved : new Array;
-              var favedClass = faved.includes(data) ? "fas" : "far"; 
+              var favedClass = faved.includes(data) ? "fas" : "far";
               return '<i prog_id='+data+' class="fa-star text-warning '+favedClass+'"></i>';
             }
           },
