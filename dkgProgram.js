@@ -53,7 +53,7 @@ $(document).ready( function () {
            $("#program_length").text("");
          this.api().columns().every(function () {
            var column = this;
-           if ([7, 8].includes(column.index())) {
+           if ([6, 7].includes(column.index())) {
              var select = $('<select class="mr-2 custom-select custom-select-sm form-control form-control-sm"><option value="">'+["Tag", "Uhrzeit"][column.index()-7]+' auswählen:</option></select>')
                 .appendTo($("#program_length"))
                 .on('change', function () {
